@@ -1,21 +1,15 @@
-import './App.css';
+import React, { useState } from 'react';
 
+function Counter() {
+  const [count, setCount] = useState(0);
 
-
-function handelClick(){
-  alert("Oups !")
-}
-function MyButton(){
-  return <button onClick={handelClick}>Click Me !</button>;
-}
-export default function MyApp() {
-  
   return (
-   <>
-   <MyButton/>
-
-   </>
+    <div>
+      <p>Le compteur est à : {count}</p>
+      <button onClick={() => setCount(count + 1)}>Incrémenter</button>
+      <button onClick={() => setCount(count - 1)}>Décrémenter</button>
+    </div>
   );
 }
 
-
+export default Counter;
